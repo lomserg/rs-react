@@ -1,7 +1,8 @@
 import { Component, ReactNode } from "react";
-import SearchBar from "../../../components/SearchBar/SEarchBar";
-import Avatar from "../../../components/Avatar";
-import Clock from "../../../components/Clock";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import GetPeople from "../../components/GetProple/GetPeaole";
+import Counter from "../../components/Counter";
+import Counters from "../../components/Counters";
 
 interface IProps {}
 
@@ -24,12 +25,12 @@ class Main extends Component<IProps, IState> {
   render(): ReactNode {
     return (
       <>
-        <Clock date={new Date()} />
-        <Avatar source={{ src: "path_to_image.jpg", description: "test" }} />
-        <SearchBar
+        <Counters />
+        {/* <SearchBar
           search={this.state.search}
           changeSearch={this.changeSearch}
         />
+        <GetPeople people={[]} />  */}
       </>
     ); // Pass the method as prop
   }

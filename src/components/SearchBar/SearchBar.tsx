@@ -37,7 +37,7 @@ class SearchBar extends React.Component<SearchBarProps> {
             this.props.changeSearch(e.target.value);
           }}
         />
-        ;
+        <button>Search</button>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Page404 from "./pages/Page404/Page404";
 import "./App.css";
 import Test from "./components/test";
-import Main from "./pages/Page404/Main/Main";
+import Main from "./pages/Main/Main";
 class App extends React.Component {
   render() {
     return (
