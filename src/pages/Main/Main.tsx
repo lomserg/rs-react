@@ -3,7 +3,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import GetPeople from "../../components/GetProple/GetPeaole";
 import Counter from "../../components/Counter";
 import Counters from "../../components/Counters";
-
+import Cards from "../../components/Cards/Cards";
 interface IProps {}
 
 interface IState {
@@ -25,7 +25,8 @@ class Main extends Component<IProps, IState> {
   render(): ReactNode {
     return (
       <>
-        <Counters />
+        <Cards />
+        {/* <Counters /> */}
         {/* <SearchBar
           search={this.state.search}
           changeSearch={this.changeSearch}

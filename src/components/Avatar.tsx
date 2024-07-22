@@ -6,7 +6,11 @@ interface AvatarProps {
     description: string;
   };
 }
-export default class Avatar extends React.Component<AvatarProps> {
+
+interface AvatarState {
+  activityUser: boolean;
+}
+export default class Avatar extends React.Component<AvatarProps, AvatarState> {
   constructor(props: AvatarProps) {
     super(props);
     this.state = {
