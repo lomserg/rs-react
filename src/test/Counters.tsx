@@ -10,7 +10,7 @@ interface CountersState {
   counters: CounterState[];
 }
 
-class Counters extends React.Component<{}, CountersState> {
+class Counters extends React.Component<object, CountersState> {
   state: CountersState = {
     counters: [
       { id: 1, value: 0 },

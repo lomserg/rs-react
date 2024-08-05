@@ -1,5 +1,8 @@
-import { Component, ReactNode } from "react";
+import { Component, ReactNode, ChangeEvent } from "react";
 import GetPeopleApi from "../../components/GetPeople/GetPeaole";
+import SearchInput from "../../components/Search/SearchInput";
+import SearchButton from "../../components/Search/SearchButton";
+import SearhResult from "../../components/SearchResult.tsx/SearchResult";
 interface IProps {}
 
 interface IState {
@@ -21,6 +24,13 @@ class Main extends Component<IProps, IState> {
   // changeSearch(searchStr: string) {
   //   this.setState({ search: searchStr });
   // }
+  handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    this.setState({ searchTerm: event.target.value });
+  };
+
+  handleSearchClick = () => {
+    this.performSearch();
+  };
 
   componentDidMount() {
     this.performSearch();
@@ -38,23 +48,14 @@ class Main extends Component<IProps, IState> {
     }
   }
   render(): ReactNode {
-    const { results } = this.state;
-    console.log(this.state.results[0]);
+    const { results, searchTerm } = this.state;
+    console.log(this.state);
     return (
       <>
         <div>
-          {results.map((result, index) => (
-            <div key={index}>
-              <h2>{result.name}</h2>
-              <p>Height: {result.height}</p>
-              <p>Mass: {result.mass}</p>
-              <p>Hair Color: {result.hair_color}</p>
-              <p>Skin Color: {result.skin_color}</p>
-              <p>Eye Color: {result.eye_color}</p>
-              <p>Birth Year: {result.birth_year}</p>
-              <p>Gender: {result.gender}</p>
-            </div>
-          ))}
+          <SearchInput value={searchTerm} onChange={this.handleInputChange} />
+          <SearchButton onClick={this.handleSearchClick} />
+          <SearhResult results={results} />
         </div>
         {/* <Counters /> */}
         {/* <SearchBar

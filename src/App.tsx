@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Page404 from "./pages/Page404/Page404";
 import "./App.css";
-import Test from "./components/test";
+import Test from "./test/test";
 import Main from "./pages/Main/Main";
 class App extends React.Component {
   render() {
